@@ -12,10 +12,10 @@
 | Git 루트 / 기존 변경 / 브랜치 | 독립 Git 저장소, main 브랜치; 초안 커밋 227a3ae49d49e00f24c37a8e73fe0e8520114767. 후속 문서 커밋 직전 WORK.md와 이슈 본문은 미커밋이었음 |
 | 신원 / 인증 / 원격 | 사용자 승인 신원 확인; GitHub 인증 성공 및 저장소 ADMIN 권한 확인 |
 | 명세 커밋 / 원격 반영 | 완성 명세 커밋 없음 / 초안 커밋 227a3ae49d49e00f24c37a8e73fe0e8520114767 원격 main 반영 확인 |
-| 이슈 URL·상태 / 담당 | https://github.com/xifoxy-ru/test_repo/issues/1 / OPEN / xifoxy-ru |
+| 이슈 URL·상태 / 담당 | [HH-001](https://github.com/xifoxy-ru/test_repo/issues/1) OPEN; [HH-002](https://github.com/xifoxy-ru/test_repo/issues/2) OPEN / GitHub 담당 xifoxy-ru |
 | local-only 예외 | 승인되지 않음 |
 | IMPLEMENTATION_READY | 미충족; 제품 구현 보류 |
-| 다음 행동 | 초안 검토, 공식 요구와 mock 제출 허용 확인, 역할·브라우저·세부 범위 결정 |
+| 다음 행동 | HH-002 패킷 독립 검토 및 구현 준비 증거 확인; 공식 요구·mock 제출 허용 확인과 Windows 실기 검증은 후속 |
 
 ## 준비 작업 기록
 
@@ -91,3 +91,12 @@
 - SPEC에 데이터·상태·음향 매핑·접근성·오류·경로 분할·실행 및 검증 계획을 제안했다. 수치와 경로는 미확정이며 기준 초안 HEAD는 `fc38534502006087e7e5cd5cc2fdcf79d3ccbcff`이다.
 - Windows 장비 부재로 Edge 설치·버전·작동 검사는 연기했다. Chrome 존재·버전 및 오프라인 실행 가능성도 미검증이다. 공식 상세·실제 EIC 자료와 mock 최종 제출 조건 확인이 남았다.
 - 현재 단계: 제안 검토 및 선택 대기. 역할·인터페이스·명세 커밋·Worker 패킷 등 준비 증거가 부족해 IMPLEMENTATION_READY는 미충족이며 HH-001은 열린 상태다.
+
+## HH-002 구현 배정 준비
+
+- [HH-002](https://github.com/xifoxy-ru/test_repo/issues/2): OPEN, GitHub 담당 xifoxy-ru, 브랜치 main. 중복 조회 후 생성하고 원격 본문·상태·담당 일치를 확인했다. 기준 검토 초안 명세 커밋 `1e2e7d975f6a23be3629dcb39597ebfd4da00eb0`은 구현 준비 완료 증거가 아니다.
+- 선행 [HH-001](https://github.com/xifoxy-ru/test_repo/issues/1)은 OPEN. AI 구현·통합 Worker는 implementation, 독립 Verifier는 verification이다. 사람 2명의 구체 역할은 미정이며 최종 계약·검증과 인수 조건 및 준비 증거 확인이 남아 IMPLEMENTATION_READY는 미충족이다. 이슈 생성은 구현 착수 승인이 아니다.
+- 사용자는 Windows Edge 실기 검증을 장비 사용 가능 시로 연기했다. 공식 상세와 실제 자료, mock 최종 제출 적합성도 미확인이다. 다음 행동은 이슈 패킷의 독립 검토와 남은 준비 증거 확인이다.
+
+- HH-002 패킷 보완: 호스트 macOS에서 `python3 --version` 3.14.6 관찰. Python은 제품 의존성이 아닌 선택적 로컬 서버 도구다. 프로젝트 루트에서 `python3 -m http.server 8000 --bind 127.0.0.1` 실행 후 `http://127.0.0.1:8000/` 접속을 제안하나 서버 자체는 아직 실행하지 않아 미검증이다.
+- 검토된 초안 명세 커밋 `1e2e7d975f6a23be3629dcb39597ebfd4da00eb0`과 독립 검토 결과는 구현 준비 완료와 구분한다. Edge 설치·버전·실행은 사용자의 명시적 결정에 따라 장비 사용 가능 시 후속 검증하며 현재 미검증이다.
