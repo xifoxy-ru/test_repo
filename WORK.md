@@ -137,3 +137,9 @@
 - 검증한 제품 파일 SHA-256: `index.html` d31c38903188533a80a318c548ac01769e63a92103cee87c2d9dfc62e2d9f71b; `css/style.css` eed1e8c5a3bf7d2c9a6839752a555853e689e552e210eeedef4e8f52902357e4; `js/data.js` d76913abfa181539ac37fb4813d33c1512dfa18ba495cabfa163ad3741935265; `js/playback.js` 12d5735859e32ec6f7dd3cca57c3242177a0bfca2c2f7cd8a99762532dfa5901.
 - 모의 Web Audio를 이용한 세부 동작 재현 검사가 통과했고, 네 자산의 HTTP HEAD 응답은 각각 200이었다. 이는 실제 브라우저에서의 검증은 아니다.
 - 실제 브라우저 도구는 `browser access host unavailable`로 사용할 수 없었다. 따라서 UI·키보드·실제 오디오와 시각 동기화·오프라인·Windows Edge는 미검증이다. 인수 조건 충족을 확인할 수 없어 이슈를 닫을 수 없다.
+
+## HH-002 구현과 검증 진행
+
+- 구현 커밋 `79ce30142bbe76e5362893fe7ac2915da0b05a82`에 대해 독립 mock Audio/타이머 검사가 통과했고 HTTP 네 자산의 200 응답을 확인했다.
+- 실제 브라우저 접근 도구를 사용할 수 없어 실제 UI·소리, Windows Edge 및 오프라인 동작은 미검증이다. Windows Edge 실기 검사는 사용자의 결정에 따라 기기 사용 가능 시 수행한다.
+- 인수와 이슈 종료는 미완료이며 HH-002는 OPEN이다. 검증 통과는 실제 브라우저 검증이나 제출 완료를 뜻하지 않는다.
