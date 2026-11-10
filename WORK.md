@@ -4,8 +4,8 @@
 | --- | --- |
 | 프로젝트 루트 | /Users/sgang/bin/Harness-hackathon-small/earth-jukebox |
 | 현재 단계 | 기획·명세 초안; 구현 전 |
-| 시작 시각 / 역할 | 미정 / 미정 |
-| 인원·시간·대상 | 2명 / 24시간 / Windows 2대; 호스트 미정 |
+| 시작 시각 / 역할 | 시작 시각 미정. 사용자: 제품 방향·최종 판단; 다른 팀원: 후속 Windows/Edge 실기 검증 |
+| 인원·시간·대상 | 2명 / 24시간 / Windows 2대; 호스트 macOS |
 | 챌린지 | The Earth Information Jukebox; 공식 상세 직접 접근 실패 |
 | 자료 | mock 사용 선택; 최종 제출 허용 여부 미확인 |
 | 제품·기술 선택 | 웹, HTML/CSS/JavaScript, Web Audio API; Windows 장비 사용 불가로 Edge 검사 연기, Chrome 존재·버전 미확인 |
@@ -31,7 +31,7 @@
 - 초기화 전 Git 확인: `git -C /Users/sgang/bin/Harness-hackathon-small/earth-jukebox rev-parse --show-toplevel` 종료 코드 128; 당시 저장소를 확인하지 못했다.
 - 미검증: 공식 챌린지 상세 요구와 mock의 최종 제출 허용 여부, Windows에서 실제 실행. 따라서 제출 적합성과 대상 장비 동작을 확인하지 못했다.
 - 현재 단계: 기획·명세 초안의 검토 단계이며 IMPLEMENTATION_READY는 미충족이다.
-- 다음 결정: 공식 요구 및 mock 허용 확인, 역할·브라우저·버전·MVP·인수 기준 결정, Git 및 원격 작업의 승인 범위 결정.
+- 당시 다음 결정: 공식 요구 및 mock 허용 확인, 역할·브라우저·버전·MVP·인수 기준 결정, Git 및 원격 작업의 승인 범위 결정. 이후 사람 역할과 mock 계약·원격 범위가 결정되었다.
 
 ## 로컬 Git 초기화 당시 기록
 
@@ -90,13 +90,21 @@
 - 사용자는 mock의 최종 제출 적합성 확인과 별개로 mock 시제품 우선 진행을 결정했다. 실제 제출 허용은 미확인이다.
 - SPEC에 데이터·상태·음향 매핑·접근성·오류·경로 분할·실행 및 검증 계획을 제안했다. 수치와 경로는 미확정이며 기준 초안 HEAD는 `fc38534502006087e7e5cd5cc2fdcf79d3ccbcff`이다.
 - Windows 장비 부재로 Edge 설치·버전·작동 검사는 연기했다. Chrome 존재·버전 및 오프라인 실행 가능성도 미검증이다. 공식 상세·실제 EIC 자료와 mock 최종 제출 조건 확인이 남았다.
-- 현재 단계: 제안 검토 및 선택 대기. 역할·인터페이스·명세 커밋·Worker 패킷 등 준비 증거가 부족해 IMPLEMENTATION_READY는 미충족이며 HH-001은 열린 상태다.
+- 당시 단계: 제안 검토 및 선택 대기. 당시 역할·인터페이스·명세 커밋·Worker 패킷 등 준비 증거가 부족했다. 현재도 잔여 증거 확인 전 IMPLEMENTATION_READY는 미충족이며 HH-001은 열린 상태다.
 
 ## HH-002 구현 배정 준비
 
 - [HH-002](https://github.com/xifoxy-ru/test_repo/issues/2): OPEN, GitHub 담당 xifoxy-ru, 브랜치 main. 중복 조회 후 생성하고 원격 본문·상태·담당 일치를 확인했다. 기준 검토 초안 명세 커밋 `1e2e7d975f6a23be3629dcb39597ebfd4da00eb0`은 구현 준비 완료 증거가 아니다.
-- 선행 [HH-001](https://github.com/xifoxy-ru/test_repo/issues/1)은 OPEN. AI 구현·통합 Worker는 implementation, 독립 Verifier는 verification이다. 사람 2명의 구체 역할은 미정이며 최종 계약·검증과 인수 조건 및 준비 증거 확인이 남아 IMPLEMENTATION_READY는 미충족이다. 이슈 생성은 구현 착수 승인이 아니다.
+- 선행 [HH-001](https://github.com/xifoxy-ru/test_repo/issues/1)은 OPEN. AI 구현·통합 Worker는 implementation, 독립 Verifier는 verification이다. 당시 사람 2명의 구체 역할은 미정이었으며 최종 계약·검증과 인수 조건 및 준비 증거 확인이 남아 IMPLEMENTATION_READY는 미충족이다. 이슈 생성은 구현 착수 승인이 아니다.
 - 사용자는 Windows Edge 실기 검증을 장비 사용 가능 시로 연기했다. 공식 상세와 실제 자료, mock 최종 제출 적합성도 미확인이다. 다음 행동은 이슈 패킷의 독립 검토와 남은 준비 증거 확인이다.
 
 - HH-002 패킷 보완: 호스트 macOS에서 `python3 --version` 3.14.6 관찰. Python은 제품 의존성이 아닌 선택적 로컬 서버 도구다. 프로젝트 루트에서 `python3 -m http.server 8000 --bind 127.0.0.1` 실행 후 `http://127.0.0.1:8000/` 접속을 제안하나 서버 자체는 아직 실행하지 않아 미검증이다.
 - 검토된 초안 명세 커밋 `1e2e7d975f6a23be3629dcb39597ebfd4da00eb0`과 독립 검토 결과는 구현 준비 완료와 구분한다. Edge 설치·버전·실행은 사용자의 명시적 결정에 따라 장비 사용 가능 시 후속 검증하며 현재 미검증이다.
+
+## mock 시제품 계약 승인 및 구현 준비
+
+- 사용자는 검토된 mock 시제품 계약에 따라 우선 구현을 진행하는 데 동의했다. AI 구현·통합 Worker는 implementation, 독립 Verifier는 verification이다. 대상 루트는 이 문서 상단 절대경로다.
+- 승인된 스택은 HTML/CSS/JavaScript와 Web Audio API다. 사용자 확인 Git 신원과 origin/main의 승인된 push·이슈 생성/갱신 범위를 사용한다. [HH-002](https://github.com/xifoxy-ru/test_repo/issues/2)는 OPEN, GitHub 담당 xifoxy-ru다. [HH-001](https://github.com/xifoxy-ru/test_repo/issues/1)도 OPEN이며 공식 제출 요건은 별도다.
+- verification이 검토한 mock 계약을 사용자 승인으로 갱신했다. 현재 기준 HEAD는 `11197a388900807fa35a4c62fec5811195de987e`; 본 변경을 포함하는 확정 명세 커밋 및 원격 반영은 아직 없다. 최신 명세와 HH-002 패킷을 대조하고 잔여 준비 증거를 확인하기 전까지 IMPLEMENTATION_READY 미충족이다.
+- 호스트 macOS에서 Python 3.14.6을 관찰했다. 선택적 서버 명령 `python3 -m http.server 8000 --bind 127.0.0.1`은 아직 실행하지 않았으며 제품 의존성이 아니다.
+- 공식 상세·자료 및 mock 최종 제출 적합성은 미확인이다. Windows Edge 설치·버전·실행은 사용자가 장비 사용 가능 시 후속 검증하도록 결정했으며 지금은 미검증이다. Chrome 존재와 버전, 오프라인 실행도 미확인이다.
