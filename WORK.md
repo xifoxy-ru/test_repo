@@ -8,7 +8,7 @@
 | 인원·시간·대상 | 2명 / 24시간 / Windows 2대; 호스트 미정 |
 | 챌린지 | The Earth Information Jukebox; 공식 상세 직접 접근 실패 |
 | 자료 | mock 사용 선택; 최종 제출 허용 여부 미확인 |
-| 제품·기술 선택 | 웹, HTML/CSS/JavaScript, Web Audio API; 브라우저 및 버전 미정 |
+| 제품·기술 선택 | 웹, HTML/CSS/JavaScript, Web Audio API; Windows 장비 사용 불가로 Edge 검사 연기, Chrome 존재·버전 미확인 |
 | Git 루트 / 기존 변경 / 브랜치 | 독립 Git 저장소, main 브랜치; 초안 커밋 227a3ae49d49e00f24c37a8e73fe0e8520114767. 후속 문서 커밋 직전 WORK.md와 이슈 본문은 미커밋이었음 |
 | 신원 / 인증 / 원격 | 사용자 승인 신원 확인; GitHub 인증 성공 및 저장소 ADMIN 권한 확인 |
 | 명세 커밋 / 원격 반영 | 완성 명세 커밋 없음 / 초안 커밋 227a3ae49d49e00f24c37a8e73fe0e8520114767 원격 main 반영 확인 |
@@ -76,3 +76,11 @@
 - 원격 main과 로컬 HEAD가 초안 커밋 `227a3ae49d49e00f24c37a8e73fe0e8520114767`로 일치함을 확인했다. 이는 완성된 명세 커밋이 아니다.
 - 이슈 [HH-001](https://github.com/xifoxy-ru/test_repo/issues/1): OPEN, 담당 xifoxy-ru, 브랜치 main. 중복 조회 후 생성하고 실제 상태·담당·본문 반영을 확인했다.
 - 다음 행동: 공식 챌린지 상세 요구와 mock 제출 적합성, Windows 브라우저와 버전, 흐름 및 검증 방법을 확인해 PROJECT·SPEC 확정을 준비한다. 구현 준비는 미충족이다.
+
+## HH-001 기획 초안 보완
+
+- 2026-11-11 확인: [공식 팀 소개](https://www.spaceappschallenge.org/2026/find-a-team/proteas/)의 검색 결과 스니펫에서 EIC 시각 프레임과 실시간 sonification 결합 목표를 관찰했다. 소개 페이지 자체의 직접 열기 성공 여부는 미확인이다. 공식 상세는 직접 접근 실패했고 실제 EIC 자료의 최종 요구 및 mock의 최종 제출 적합성은 미확인이다.
+- 참고용 [지역 행사 페이지](https://hackathlone.com/challenges/the-earth-information-jukebox)는 11월 13일 자료 공개 예정을 주장한다. 이는 공식 확정 정보가 아니다. 확인일 2026-11-11.
+- 사용자 결정: Windows 장비를 지금 사용할 수 없어 Edge 설치·버전·작동 검사를 장비 사용 가능 시로 연기한다. Chrome 존재와 버전도 확인하지 못했다.
+- 현상 선택과 mock 시각 프레임 또는 시계열 재생/정지, 동기화 소리·변환 규칙 설명, 키보드·음량 제어는 기존 방향에 대한 제안이며 세부 계약은 미결이다.
+- 현재 단계: 기획·기술 계약 초안 보완 및 독립 검토 대기. IMPLEMENTATION_READY 미충족; 공식 요구·자료·mock 제출 허용, 대상 브라우저 실측과 세부 인수 조건이 남았다. HH-001은 열린 상태다.
